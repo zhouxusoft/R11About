@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软著工具</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/5.2.3/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container py-5">
+        <h4 class="mb-4">软著代码工具</h4>
+        <div class="shadow-sm rounded">
+            <textarea class="form-control mb-4 input" rows="10"></textarea>
+        </div>
+        <div class="d-flex">
+            <button class="btn btn-success shadow-sm clear">清除注释和空白</button>
+            <button class="btn border ms-auto me-3 shadow-sm charNum">字数 <span>0</span></button>
+            <button class="btn border shadow-sm lineNum">行数 <span>1</span></button>
+        </div>
+    </div>
+    <script>
+        const input = document.querySelector('.input')
+        const clear = document.querySelector('.clear')
+        const charNum = document.querySelector('.charNum span')
+        const lineNum = document.querySelector('.lineNum span')
+        clear.addEventListener('click', function () {
+            let code = input.value;
+            // 去除 JS 注释
+            code = code.replace(/\/\/.*/g, '')
+            // 去除 CSS 注释
+            code = code.replace(/\/\*.*/g, '')
+            // 去除 HTML 注释
+            const regexp = new RegExp('<!--.*', 'g')
+            code = code.replace(regexp, '')
+            // 清除前置和后置空白
+            code = code.replace(/(^\s*)|(\s*$)/gm, '')
+            // 清除空行
+            code = code.replace(/\n{2,}/g, '\n')
+            input.value = code
+        })
+        input.addEventListener('keyup', () => {
+            charNum.innerHTML = input.value.length
+            lineNum.innerHTML = input.value.split('\n').length
+        })
+
+    </script>
+</body>
+
+</html>
