@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godxu软著相关</title>
+    <link rel="shortcut icon" href="img/gg.svg" type="icon" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: #0f1423;
+            min-height: 100vh;
+        }
+
+        .borderBox {
+            position: relative;
+            top: -60px;
+            background-color: rgb(83, 124, 110);
+            width: 400px;
+            padding: 50px;
+            margin: auto;
+            text-align: center;
+            border-radius: 1rem;
+        }
+
+        .borderBox ul {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .borderBox ul li {
+            list-style: none;
+            border-radius: 8px;
+        }
+
+        .borderBox ul li a {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: lighter;
+            width: 100%;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: whitesmoke;
+            color: #ff0000;
+            transition: 0.5s;
+        }
+
+        .borderBox ul li a::after {
+            content: '»';
+            position: relative;
+            opacity: 0;
+            right: -5px;
+            transition: 0.5s;
+        }
+
+        .borderBox ul li:hover a {
+            padding-right: 25px;
+        }
+
+        .borderBox ul li:hover a::after {
+            opacity: 1;
+            right: -10px;
+        }
+
+        .bottom {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+        }
+
+        .beiAn {
+            color: silver;
+        }
+
+        .beiAn a {
+            font-size: 16px;
+            color: silver;
+            padding: 5px;
+            text-decoration: none;
+        }
+
+        .beiAn a:hover {
+            font-size: 16px;
+            color: silver;
+            padding: 5px;
+            text-decoration: underline;
+        }
+
+        .about .icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+            background-color: silver;
+            border-radius: 50%;
+        }
+
+        .bottom .about {
+            display: inline-block;
+            border-radius: 10px;
+            transition: 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .bottom .about .icon {
+            margin: 0 10px;
+            background-color: silver;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .bottom .about .code {
+            border-radius: 10px;
+            padding-top: 5px;
+            transition: 0.3s;
+        }
+
+        .bottom .about:hover {
+            background-color: white;
+            box-shadow: 0 0 7px rgba(0, 255, 0, 0.7);
+        }
+
+        .bottom .about .code img {
+            width: 0px;
+            transition: 0.3s;
+        }
+
+        .bottom .about:hover .code img {
+            width: 100px;
+        }
+
+        .bottom .about:hover .icon {
+            background-color: bisque;
+            margin: 0 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="borderBox">
+        <ul>
+            <li>
+                <a href="软著代码工具.html">软著代码工具</a>
+            </li>
+            <li>
+                <a href="https://flowus.cn/oyps/share/4d03239f-09ef-40cb-90e6-6bee14895619">软著代理服务</a>
+            </li>
+            <li>
+                <a href="https://flowus.cn/godxu/e640dcdc-161b-4bbf-8f55-2dee1d23a74e">我的订单</a>
+            </li>
+            <li>
+                <a href="https://flowus.cn/oyps/share/48d00bdf-c077-4151-92fa-2c71caed915b" id="openPagesButton">开始工作</a>
+            </li>
+        </ul>
+    </div>
+    <div class="bottom">
+        <div class="about">
+            <div class="code">
+                <img src="img/wechatcode.jpg" alt="">
+            </div>
+            <img src="img/微信.png" alt="" width="40px" class="icon">
+        </div>
+        <div class="about">
+            <div class="code">
+                <img src="img/qqcode3.png" alt="">
+            </div>
+            <img src="img/QQ-circle-fill.png" alt="" width="40px" class="icon">
+        </div>
+    </div>
+    <script>
+        document.getElementById("openPagesButton").addEventListener("click", function () {
+            // window.open("https://flowus.cn/oyps/share/48d00bdf-c077-4151-92fa-2c71caed915b", "_blank")
+            window.open("https://chat.zhile.io/", "_blank")
+        })
+    </script>
+</body>
+
+</html>
